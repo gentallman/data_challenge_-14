@@ -1,0 +1,13 @@
+SELECT * FROM jotstar_db.subscribers
+INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/jotstar_subscribers.csv'  
+FIELDS TERMINATED BY ','  
+ENCLOSED BY '"'  
+LINES TERMINATED BY '\n';
+
+-- Check Secure File Privilege Directory
+-- Run this command in MySQL to check the allowed directory for exporting files:
+
+SHOW VARIABLES LIKE "secure_file_priv";
+
+-- If it returns a directory path, you must save your CSV file in that location.
+-- If it returns NULL, exporting via OUTFILE is disabled.
